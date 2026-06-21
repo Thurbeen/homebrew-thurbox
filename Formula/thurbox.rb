@@ -16,7 +16,7 @@
 class Thurbox < Formula
   desc "TUI for orchestrating multiple coding-agent CLI sessions in persistent tmux panels"
   homepage "https://github.com/Thurbeen/thurbox"
-  version "0.137.1"
+  version "0.138.0"
   license "MIT"
 
   depends_on "git"
@@ -25,14 +25,14 @@ class Thurbox < Formula
   on_macos do
     on_arm do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "917cb7d29df8cdc330182a047d1915955c803c15bd9a47b839042b8581643840"
+      sha256 "e81be732004ad4444f391c2cdf66aeddb7c21006282b472620e828157ca351b8"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "aa83d6f5afa58342166cd695744a4806f191f8fa66a09793670997821047731a"
+      sha256 "f9f2b012cffbf7a1675d58943c7cf52f0440999b1abb1d7249920ed17bfdfe76"
     end
   end
 
@@ -45,7 +45,7 @@ class Thurbox < Formula
 
   def caveats
     <<~EOS
-      thurbox needs tmux >= 3.2 and a coding-agent CLI (claude, codex, gemini,
+      thurbox needs tmux >= 3.2 and a coding-agent CLI (claude, codex, antigravity,
       opencode, aider, …) on your PATH. Launch the TUI with `thurbox`; the
       scriptable headless interface is `thurbox-cli`.
     EOS
