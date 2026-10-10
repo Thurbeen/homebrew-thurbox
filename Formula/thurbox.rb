@@ -16,7 +16,7 @@
 class Thurbox < Formula
   desc "TUI for orchestrating multiple coding-agent CLI sessions in persistent tmux panels"
   homepage "https://github.com/Thurbeen/thurbox"
-  version "2.56.3"
+  version "2.56.4"
   license "MIT"
 
   depends_on "git"
@@ -25,14 +25,14 @@ class Thurbox < Formula
   on_macos do
     on_arm do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "2da0cbe2a6acef758df6927dcbaa72b0fd250cbe637cdd44bee23fc24dd5c3b0"
+      sha256 "15c264d8a64971497ef910046763ac1c84766e5774d2f49a34ed8c93a016c7c0"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "e972d982f8b6358cc214398495f0b4cc137b54e1825adcbabbf9274543db82e2"
+      sha256 "51eec34de70ac4d87b869becfc2abee84a84893b862be29bd84cff25bf72101f"
     end
   end
 
