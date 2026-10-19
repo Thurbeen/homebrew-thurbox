@@ -11,12 +11,13 @@
 # Only the platforms with a published release artifact are supported:
 #   - macOS arm64 (Apple Silicon) -> aarch64-apple-darwin
 #   - Linux x86_64                -> x86_64-unknown-linux-musl (static)
-# Intel macOS and aarch64 Linux have no release binary, so they are omitted
-# (brew reports "no available formula" on those platforms).
+#   - Linux aarch64               -> aarch64-unknown-linux-musl (static)
+# Intel macOS has no release binary, so it is omitted (brew reports "no
+# available formula" there).
 class Thurbox < Formula
   desc "TUI for orchestrating multiple coding-agent CLI sessions in persistent tmux panels"
   homepage "https://github.com/Thurbeen/thurbox"
-  version "2.60.1"
+  version "2.61.0"
   license "MIT"
 
   depends_on "git"
@@ -25,14 +26,20 @@ class Thurbox < Formula
   on_macos do
     on_arm do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "b8b3dcff58e8ae2b2fd9fe164bd40390659d916eb6570ccb2e4374fb19216e75"
+      sha256 "b619035d38086b28691fe0dd8be0d92ed92db471aafc21ea46c61777d2aaee95"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "9642e38fb86bb50000616552e670d6ef030a669de3f72b3e6d844a5d2d90565d"
+      sha256 "2d8eef736909b46ff88da6ca9e7a14c6dd0bb2b878a37eb7d9d68f387745708e"
+    end
+    # No release before this block existed shipped the tarball, so the template
+    # has no last-known-good sum; bump-formula.py fills it on the first release.
+    on_arm do
+      url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-aarch64-unknown-linux-musl.tar.gz"
+      sha256 "cc12a9e5140dda2747b04f7e944680f01581c4dce4a05d166f0c06cbeac72f9a"
     end
   end
 
