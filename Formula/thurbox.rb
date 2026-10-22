@@ -17,7 +17,7 @@
 class Thurbox < Formula
   desc "TUI for orchestrating multiple coding-agent CLI sessions in persistent tmux panels"
   homepage "https://github.com/Thurbeen/thurbox"
-  version "2.68.0"
+  version "2.69.0"
   license "MIT"
 
   depends_on "git"
@@ -26,20 +26,20 @@ class Thurbox < Formula
   on_macos do
     on_arm do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "0562238f2534dedaf427b8ef5aad69b861d0c6c0111394f90f29127a6249d107"
+      sha256 "a14631d9f422134ca524947ba575f6bde9843ba307a914a582b2ce37632fad26"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "72d6c0dcc27ff25d2c124ffcb7b332c007260add14fc14b54494f1924cfe0681"
+      sha256 "72adf7b0fc9c4396b4c6cffb23a2c108c7489e69f3540838e24b414e1b64727e"
     end
     # No release before this block existed shipped the tarball, so the template
     # has no last-known-good sum; bump-formula.py fills it on the first release.
     on_arm do
       url "https://github.com/Thurbeen/thurbox/releases/download/v#{version}/thurbox-v#{version}-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "2af31f91379f7c3aa4dab19360b14f20a651edb157203eaeb3ba659d656ccfb5"
+      sha256 "ea86e055740ca67936aa2b23e3bc54b373b97137564e76dff2c829853a1cc75e"
     end
   end
 
